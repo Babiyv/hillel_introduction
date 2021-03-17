@@ -17,7 +17,7 @@ public class Task3 {
         double sum = b + s + i + f1 + d1 + d2;
         System.out.println(Double.toString(sum)); // -> первый вариант вывода, если не хотим создавать отдельную переменную String. Кажется наиболее оптимальным.
 
-//        Второй вариант вывода, если планиурем в дальнейшей производить:
+//        Второй вариант вывода, если хотим для чего-то сохранить еще и сам стринг:
         String str = Double.toString(sum);
         System.out.println(str);
 
