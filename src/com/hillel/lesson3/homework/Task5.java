@@ -3,7 +3,7 @@ package com.hillel.lesson3.homework;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task4 {
+public class Task5 {
     public static void main(String[] args) {
         /*5)   Создать 2 схожих метода, которые будут случайным образом генерировать Вашу зарплату.
         Обратите внимание, что именно метода, а не просто вызовы указанных функций.
