@@ -19,10 +19,14 @@ public class Task3 {
         int quantity = sc.nextInt();
         quantity = checkIfCorrect(quantity, sc);
         sc.close();
-        lottery(quantity);
+//        Первый вариант определения и вывода победителя (кажется более приятный и аккуратным):
+        lotteryVoid(quantity);
+//        Второй вариант определения и вывода победителя:
+        int winner = lotteryInt(quantity);
+        System.out.println("Winner is player #" + winner);
     }
 
-    private static int checkIfCorrect(int digit, Scanner scan) {
+    private static int checkIfCorrect(int digit, Scanner scan) { // - почему-то не очень нравится передавать сканнер в метод, кажется буд-то теряет "самостоятельность"
         while (digit <= 0){
             System.out.print("Incorrect value. It can`t be 0 or less. Enter correct quantity: ");
             digit = scan.nextInt();
@@ -30,10 +34,15 @@ public class Task3 {
         return digit;
     }
 
-    private static void lottery (int quantityOfPlayers){
+    private static void lotteryVoid (int quantityOfPlayers){
         Random randomWinner = new Random();
         int winner = randomWinner.nextInt(quantityOfPlayers) + 1;
         System.out.println("Winner is player #" + winner);
+    }
+
+    private static int lotteryInt (int quantityOfPlayers){
+        Random randomWinner = new Random();
+        return randomWinner.nextInt(quantityOfPlayers) + 1;
     }
 
 }
