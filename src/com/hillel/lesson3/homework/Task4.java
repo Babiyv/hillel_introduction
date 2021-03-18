@@ -27,7 +27,7 @@ public class Task4 {
     private static int salaryRandom(int min) {
         Random random = new Random();
         int purpose = random.nextInt(min);
-        while (purpose < 0){
+        while (purpose < 0){ // - чтобы не выдавало миносовое значение
             purpose = random.nextInt(min);
         }
         return min + purpose;
