@@ -6,12 +6,12 @@ package com.hillel.lesson4.homework;
     Реализовать в отдельном методе.*/
 public class Task3 {
     public static void main(String[] args) {
-        printFrom100To10();
+        printFrom100To0();
         System.out.println();
         printReverseWhile(100, 0, 5); // просто попробовал сделать универсальный метод:
     }
 
-    private static void printFrom100To10() {
+    private static void printFrom100To0() {
         int digit = 100;
         while (digit >= 0){
             System.out.print(digit + " ");
