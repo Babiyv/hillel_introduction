@@ -12,11 +12,11 @@ public class Task1 {
         int min = sc.nextInt();
         System.out.print("Enter finite number: ");
         int max = sc.nextInt();
-        printFromMinToMax(min, max);
+        printFromMinToMaxWhile(min, max);
         sc.close();
     }
 
-    private static void printFromMinToMax(int from, int to) {
+    private static void printFromMinToMaxWhile(int from, int to) {
         while (from <= to){
             System.out.print(from + " ");
             from++;
