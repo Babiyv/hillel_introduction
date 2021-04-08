@@ -43,7 +43,7 @@ public class Task1 {
 
 
 //        5) Используя команду обрезания вывести “developer”;
-        System.out.println("#5 \n Substring of string \"str\": " + str.substring(str.indexOf("developer"))); // - лень было считать вручную с какой ячейки начинается слово:)
+        System.out.println("#5 \n Substring of string \"str\": " + str.substring(str.indexOf("developer"), str.indexOf("  "))); // - лень было считать вручную с какой ячейки начинается слово и любопытно побаловаться:)
 
 
 //        6) Добавить в конце строки знак “!”;

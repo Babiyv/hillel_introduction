@@ -18,14 +18,7 @@ public class StringLength {
 
 //        _______________________________ все что писалось в общем классе:
 
-        String firstStringToTestEquals = "My test String";
-        String firstStringToTestEquals2 = "My test String";
-        String secondStringToTestEquals = "my test string";
 
-        boolean isEqualFirstStringToSecondString = firstStringToTestEquals.equals(secondStringToTestEquals); // - не будут счиатться одинаковыми, так как разный регистр;
-        boolean isEqualSecondStringToSameFirstButAnotherObjectString = firstStringToTestEquals.equals(firstStringToTestEquals2);
-
-        boolean isEqualFirstStringToSecondStringIgnoreCase = firstStringToTestEquals.equalsIgnoreCase(firstStringToTestEquals2); // equalsIgnoreCase - игнорирует регистр (большая или маленькая буква);
 
 
 
