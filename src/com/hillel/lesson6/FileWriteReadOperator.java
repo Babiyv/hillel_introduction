@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class FileWriteReadOperator {
 
-    static String pathToFile = "C:\\Users\\work\\IdeaProjects\\HillelJavaCourse\\src\\com\\hillel\\lesson6\\myTextFile";
+    static String pathToFile = "C:\\Users\\work\\IdeaProjects\\HillelJavaCourse\\src\\com\\hillel\\lesson6\\MyTextFile";
 
 
     public static void main(String[] args) throws IOException {
