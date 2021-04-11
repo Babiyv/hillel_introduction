@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class Coronavirus {
 
-    private boolean isCureResearched = false;
+    private final int RESEARCH_LIMIT_INDEX = 100;
+
+    private boolean isCureResearched; // по дефоулту будет false;
 
     private String coronavirusType;
 
-    private boolean isCuredAndDestroyed = false; // - false был бы и так, как значение по умолчанию для булеанов, но мы просто прописали, чтобы была более наглядна логика
+    private boolean isCuredAndDestroyed; // - false был бы и так, как значение по умолчанию для булеанов, но мы просто прописали, чтобы была более наглядна логика
 
     public Coronavirus(String coronavirusType) {
         this.coronavirusType = coronavirusType;
@@ -31,7 +33,7 @@ public class Coronavirus {
     }
 
     public void attack(Human human){
-        if (human.getHealth() > 0 || (isCureResearched = false)) {
+        if (human.getHealth() > 0 && (isCuredAndDestroyed == false)) {
             int damage = getRandomInt(0, human.getHealth());
             human.setHealth(damage);
         }
@@ -54,4 +56,17 @@ public class Coronavirus {
                 ", isCuredAndDestroyed=" + isCuredAndDestroyed +
                 '}';
     }
+
+    public void scientistImpactToDefeatCoronavirus(int covidResearchIndex){
+        boolean isDefeated = covidResearchIndex >= RESEARCH_LIMIT_INDEX;
+
+        if (isDefeated){
+            System.out.println("HHHHHHEEEEEEEYY COVID DEFEATED!!!");
+            this.setCuredAndDestroyed(true);
+        } else {
+            System.out.println("COVID NOT DEFEATED YET!!! STILL WAIT FOR RESEARCH, STATUS: " + covidResearchIndex);
+        }
+    }
+
+
 }

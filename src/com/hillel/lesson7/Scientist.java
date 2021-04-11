@@ -19,7 +19,7 @@ public class Scientist {
     }
 
     public int performResearch(){
-        int research = getRandomInt(0, 10);
+        int research = getRandomInt(0, 95);
 
         if (research == 0){
             System.out.println("Scientist ".concat(name).concat(" did nothing this time!!!"));

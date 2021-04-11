@@ -89,13 +89,28 @@ public class ClassWork7 {
         hillelEmergencyService.checkIsHumanAliveAndCured(vlad);
         hillelEmergencyService.checkIsHumanAliveAndCured(katya);
 
+        updateResearchIndexByScientist(einstein);
+        updateResearchIndexByScientist(esmeralda);
+        updateResearchIndexByScientist(alfred);
+
+        /* вынесли в отедльный метод:
         covidResearchIndex = covidResearchIndex + einstein.performResearch();
         covidResearchIndex = covidResearchIndex + esmeralda.performResearch();
-        covidResearchIndex = covidResearchIndex + alfred.performResearch();
+        covidResearchIndex = covidResearchIndex + alfred.performResearch();*/
 
-        isCovidDefeated(covid);
+        System.out.println("covidResearchIndex now is: " + covidResearchIndex);
+
+        covid.scientistImpactToDefeatCoronavirus(covidResearchIndex);
+
+        System.out.println("FIFTH WAVE OF CORONA");
+        covid.attack(dima);
+        covid.attack(vlad);
+        covid.attack(katya);
+
+/*        isCovidDefeated(covid);*/
     }
 
+    /*
     private static void isCovidDefeated(Coronavirus coronavirus){
         boolean isDefeated = covidResearchIndex >= 100;
 
@@ -106,7 +121,7 @@ public class ClassWork7 {
             System.out.println("COVID NOT DEFEATED YET!!! STILL WAIT FOR RESEARCH, STATUS: " + covidResearchIndex);
         }
     }
-
+*/
 
     private static void coronaAttack(Human human){
 
@@ -149,6 +164,10 @@ public class ClassWork7 {
         return randomHealthDamage.ints(min, max)
                 .findFirst()
                 .getAsInt();
+    }
+
+    private static void  updateResearchIndexByScientist(Scientist scientist){
+        covidResearchIndex = covidResearchIndex + scientist.performResearch();
     }
 
 }
