@@ -33,8 +33,8 @@ public class ClassWork8 {
         System.out.println(objectConstructorExample);
 
         IncapsulationExample girl_1 = new IncapsulationExample("Dina", 18, "female");
-        IncapsulationExample girl_2 = new IncapsulationExample("Dina", 18, "female");
-        IncapsulationExample girl_3 = new IncapsulationExample("Dina", 18, "female");
+        IncapsulationExample girl_2 = new IncapsulationExample("Dina", 18, GIRL_SEX); // - присвоение константного значения ускоряет время выполнения программы, в сравнении с верхней строчкой
+        IncapsulationExample girl_3 = new IncapsulationExample("Dina", 18, GIRL_SEX); // - использование константы GIRL_SEX имеет смысл применять если встречается больше 3-х раз и считается best practice
 
 
     }
