@@ -8,33 +8,33 @@ public class ClassWork8 {
 
 //        GIRL_SEX = "male"; // - не даст присвоить male, потому что выше мы уже объявили,что это final и присвоили female; (константнта - не изменяемое значение)
 
-        IncapsulationExample incapsulationExample;
-        incapsulationExample = new IncapsulationExample(); // - можно было сразу создать в строке выше;
-        incapsulationExample.setName("MyName");
-        incapsulationExample.setAge(5);
-        incapsulationExample.setSex("male");
+        EncapsulationExample encapsulationExample;
+        encapsulationExample = new EncapsulationExample(); // - можно было сразу создать в строке выше;
+        encapsulationExample.setName("MyName");
+        encapsulationExample.setAge(5);
+        encapsulationExample.setSex("male");
 
-        System.out.println(incapsulationExample);
+        System.out.println(encapsulationExample);
 
         System.out.println("########################################################");
 
-        IncapsulationExample incorrectIncapsulationExample = new IncapsulationExample();
-        incorrectIncapsulationExample.setAge(-1);
-        incorrectIncapsulationExample.setSex("unknown");
+        EncapsulationExample incorrectEncapsulationExample = new EncapsulationExample();
+        incorrectEncapsulationExample.setAge(-1);
+        incorrectEncapsulationExample.setSex("unknown");
 
-        System.out.println(incorrectIncapsulationExample);
+        System.out.println(incorrectEncapsulationExample);
 
-        IncapsulationExample constructorExample = new IncapsulationExample("MyConstructorName");
+        EncapsulationExample constructorExample = new EncapsulationExample("MyConstructorName");
         System.out.println(constructorExample);
 
         System.out.println("########################################################");
 
-        IncapsulationExample objectConstructorExample = new IncapsulationExample(constructorExample); // пример конструктора по объэкту (конструктора копирования);
+        EncapsulationExample objectConstructorExample = new EncapsulationExample(constructorExample); // пример конструктора по объэкту (конструктора копирования);
         System.out.println(objectConstructorExample);
 
-        IncapsulationExample girl_1 = new IncapsulationExample("Dina", 18, "female");
-        IncapsulationExample girl_2 = new IncapsulationExample("Dina", 18, GIRL_SEX); // - присвоение константного значения ускоряет время выполнения программы, в сравнении с верхней строчкой
-        IncapsulationExample girl_3 = new IncapsulationExample("Dina", 18, GIRL_SEX); // - использование константы GIRL_SEX имеет смысл применять если встречается больше 3-х раз и считается best practice
+        EncapsulationExample girl_1 = new EncapsulationExample("Dina", 18, "female");
+        EncapsulationExample girl_2 = new EncapsulationExample("Dina", 18, GIRL_SEX); // - присвоение константного значения ускоряет время выполнения программы, в сравнении с верхней строчкой
+        EncapsulationExample girl_3 = new EncapsulationExample("Dina", 18, GIRL_SEX); // - использование константы GIRL_SEX имеет смысл применять если встречается больше 3-х раз и считается best practice
 
 
     }
