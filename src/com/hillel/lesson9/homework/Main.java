@@ -13,6 +13,7 @@ public class Main {
     static String pathToFile = "C:\\Users\\work\\IdeaProjects\\HillelJavaCourse\\src\\com\\hillel\\lesson9\\homework\\FileForHomework9";
     static final String DEFAULT_COUNTRY = "Ukraine";
     static final boolean IS_MALE = true;
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
 
@@ -21,23 +22,25 @@ public class Main {
         Support supportUser1 = new Support("Alexander", "541", "541@gmail.com", "541", IS_MALE, DEFAULT_COUNTRY);
         Admin adminUser1 = new Admin("Dmitriy", "Laletin", "dl@gamil.com", "powerOfMind", IS_MALE, DEFAULT_COUNTRY);
 
+        doSomething(user1);
+        doSomething(supportUser1);
         doSomething(adminUser1);
 
+        sc.close();
     }
 
     private static void doSomething (User userIs) throws IOException {
         if (userIs instanceof Support){
             System.out.println("Instance of class Support");
-            Support.writeToFileFromConsole(pathToFile);
-            Support.lineChecker(pathToFile);
+            Support.writeToFileFromConsole(pathToFile, sc);
+            Support.lineChecker(pathToFile, sc);
         } else if (userIs instanceof Admin){
             System.out.println("Instance of class Admin");
-            Admin.writeToFileFromConsole(pathToFile);
-            Admin.deleteIfContains(pathToFile, Support.lineChecker(pathToFile));
+            Admin.writeToFileFromConsole(pathToFile, sc);
+            Admin.deleteIfContains(pathToFile, Support.lineChecker(pathToFile, sc));
         } else {
             System.out.println("Instance of User");
-            User.writeToFileFromConsole(pathToFile);
+            User.writeToFileFromConsole(pathToFile, sc);
         }
     }
-
 }

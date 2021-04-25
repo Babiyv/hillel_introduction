@@ -15,10 +15,10 @@ public final class Admin extends User {
         super(userName, userSurname, userEmail, userPassword, userSexIsMale, userCountry);
     }
 
-    public static void deleteIfContains (String pathToFile, boolean isContains) {
+    public static void deleteIfContains(String pathToFile, boolean isContains) {
         if (isContains) {
             File file = new File(pathToFile);
-            if(file.delete()) {
+            if (file.delete()) {
                 System.out.println("File has been deleted...");
             }
         } else {

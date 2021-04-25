@@ -8,7 +8,6 @@ package com.hillel.lesson9.homework;
 Этот метод должен на вход принимать строку и проверять наличие этой строки в файле.
 Обратно возвращать значение “содержит/не содержит”(подумайте какая переменная лучше всего подходит для данного типа)*/
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -18,17 +17,16 @@ public final class Support extends User {
         super(userName, userSurname, userEmail, userPassword, userSexIsMale, userCountry);
     }
 
-    public static boolean lineChecker (String pathToFile) throws IOException {
+    public static boolean lineChecker(String pathToFile, Scanner scanner) throws IOException {
+        System.out.println("Please enter text that you want to check in file: ");
+        String textForChecking = scanner.nextLine();
+
         FileReader fileReader = new FileReader(pathToFile);
         Scanner sc = new Scanner(fileReader);
-
-        System.out.println("Please enter text that you want to check in file: ");
-        String textForChecking = sc.nextLine();
-
         boolean isContains = false;
-        while (sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             String fileString = sc.nextLine();
-            if (fileString.equalsIgnoreCase(textForChecking)){
+            if (fileString.equalsIgnoreCase(textForChecking)) {
                 isContains = true;
                 System.out.println("File contain \"" + textForChecking + "\"");
             } else {
@@ -39,6 +37,4 @@ public final class Support extends User {
         fileReader.close();
         return isContains;
     }
-
-
 }

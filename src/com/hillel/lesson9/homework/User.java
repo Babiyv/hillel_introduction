@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class User {
-//    ·  Создайте класс User, у которого будет несколько полей(имя, фамилия, почта, пароль, пол, страна).
+    //    ·  Создайте класс User, у которого будет несколько полей(имя, фамилия, почта, пароль, пол, страна).
     private String userName;
     private String userSurname;
     private String userEmail;
@@ -40,11 +40,7 @@ public class User {
 
 //     Соблюдая принципы инкапсуляции реализуйте в нем все необходимые методы/конструкторы для дальнейшей работы.
 
-/*
-    public User() { // <- сперва решил создать и конструктор по умолчанию, чтобы могли создавать пустой экземпляр класса, но потом подумал, что нам не нужны пустые экземпляры или с не полными данными.
-    }
-*/
-
+//    public User() { // <- сперва решил создать и конструктор по умолчанию, чтобы могли создавать пустой экземпляр класса, но потом подумал, что нам не нужны пустые экземпляры или с не полными данными.
     public User(String userName, String userSurname, String userEmail, String userPassword, boolean userSexIsMale, String userCountry) {
         this.userName = userName;
         this.userSurname = userSurname;
@@ -114,9 +110,9 @@ public class User {
                 '}';
     }
 
-//    ·  Так же у данного класса должно быть 2 метода:
-//а). Читать. Принимает текст, ничего не возвращает, выводит сообщение принятое в консоль. Данный метод необходимо задать как “неизменяемый”.
-    public static void readerUserMethod (){
+//   ·  Так же у данного класса должно быть 2 метода:
+//    а). Читать. Принимает текст, ничего не возвращает, выводит сообщение принятое в консоль. Данный метод необходимо задать как “неизменяемый”.
+    public static void readerUserMethod() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your text: ");
         String inputText = sc.nextLine();
@@ -124,16 +120,13 @@ public class User {
         sc.close();
     }
 
-//б). Писать. Ничего не принимает, просто считывает текст с клавиатуры и сохраняет введенный текст в файл.
-    public static void writeToFileFromConsole (String pathToFile) throws IOException {
+//    б). Писать. Ничего не принимает, просто считывает текст с клавиатуры и сохраняет введенный текст в файл.
+    public static void writeToFileFromConsole(String pathToFile, Scanner sc) throws IOException {
         FileWriter fileWriter = new FileWriter(pathToFile);
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in); // - (2) решил и вовсе попробовать передавать сканер в сигнанутры методов и потом закрыть все разом в мейновом классе
         System.out.println("Please enter text to write: ");
         fileWriter.write(sc.nextLine());
-        sc.close();
+//        sc.close(); // - (1) пришлось закоментировать ибо иначе, по всей видимости, закрывало потоки раньше чем нужно было и выдавало ошибку;
         fileWriter.close();
-
     }
-
-
 }
