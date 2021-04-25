@@ -25,5 +25,108 @@ User = написать строку
 Support = написать строку + проверить наличие этой строки в файле
 Admin = написать строку + проверить + удалить файл, если такая строка найдена.*/
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class User {
+//    ·  Создайте класс User, у которого будет несколько полей(имя, фамилия, почта, пароль, пол, страна).
+    private String userName;
+    private String userSurname;
+    private String userEmail;
+    private String userPassword;
+    private boolean userSexIsMale;
+    private String userCountry;
+
+//     Соблюдая принципы инкапсуляции реализуйте в нем все необходимые методы/конструкторы для дальнейшей работы.
+
+/*
+    public User() { // <- сперва решил создать и конструктор по умолчанию, чтобы могли создавать пустой экземпляр класса, но потом подумал, что нам не нужны пустые экземпляры или с не полными данными.
+    }
+*/
+
+    public User(String userName, String userSurname, String userEmail, String userPassword, boolean userSexIsMale, String userCountry) {
+        this.userName = userName;
+        this.userSurname = userSurname;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.userSexIsMale = userSexIsMale;
+        this.userCountry = userCountry;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public boolean isUserSexIsMale() {
+        return userSexIsMale;
+    }
+
+    public void setUserSexIsMale(boolean userSexIsMale) {
+        this.userSexIsMale = userSexIsMale;
+    }
+
+    public String getUserCountry() {
+        return userCountry;
+    }
+
+    public void setUserCountry(String userCountry) {
+        this.userCountry = userCountry;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", userSurname='" + userSurname + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userSexIsMale=" + userSexIsMale +
+                ", userCountry='" + userCountry + '\'' +
+                '}';
+    }
+
+//    ·  Так же у данного класса должно быть 2 метода:
+//а). Читать. Принимает текст, ничего не возвращает, выводит сообщение принятое в консоль. Данный метод необходимо задать как “неизменяемый”.
+    public static void readerUserMethod (String inputText){
+        System.out.println("Input text: " + inputText);
+    }
+
+//б). Писать. Ничего не принимает, просто считывает текст с клавиатуры и сохраняет введенный текст в файл.
+    public static void writeToFileFromConsole (String pathToFile, String inputText) throws IOException {
+        FileWriter fileWriter = new FileWriter(pathToFile);
+        fileWriter.write(inputText);
+        fileWriter.close();
+
+    }
+
+
 }
