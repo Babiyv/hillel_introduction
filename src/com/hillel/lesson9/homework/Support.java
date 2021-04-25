@@ -18,17 +18,21 @@ public final class Support extends User {
         super(userName, userSurname, userEmail, userPassword, userSexIsMale, userCountry);
     }
 
-    public static boolean lineChecker (String pathToFile, String textForChecking) throws IOException {
+    public static boolean lineChecker (String pathToFile) throws IOException {
         FileReader fileReader = new FileReader(pathToFile);
         Scanner sc = new Scanner(fileReader);
+
+        System.out.println("Please enter text that you want to check in file: ");
+        String textForChecking = sc.nextLine();
+
         boolean isContains = false;
         while (sc.hasNextLine()){
             String fileString = sc.nextLine();
             if (fileString.equalsIgnoreCase(textForChecking)){
                 isContains = true;
-                System.out.println("File contain " + textForChecking);
+                System.out.println("File contain \"" + textForChecking + "\"");
             } else {
-                System.out.println("File NOT contain " + textForChecking);
+                System.out.println("File NOT contain \"" + textForChecking + "\"");
             }
         }
         sc.close();

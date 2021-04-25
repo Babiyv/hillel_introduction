@@ -116,14 +116,21 @@ public class User {
 
 //    ·  Так же у данного класса должно быть 2 метода:
 //а). Читать. Принимает текст, ничего не возвращает, выводит сообщение принятое в консоль. Данный метод необходимо задать как “неизменяемый”.
-    public static void readerUserMethod (String inputText){
-        System.out.println("Input text: " + inputText);
+    public static void readerUserMethod (){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter your text: ");
+        String inputText = sc.nextLine();
+        System.out.println("Your entered text is: \"" + inputText + "\"");
+        sc.close();
     }
 
 //б). Писать. Ничего не принимает, просто считывает текст с клавиатуры и сохраняет введенный текст в файл.
-    public static void writeToFileFromConsole (String pathToFile, String inputText) throws IOException {
+    public static void writeToFileFromConsole (String pathToFile) throws IOException {
         FileWriter fileWriter = new FileWriter(pathToFile);
-        fileWriter.write(inputText);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter text to write: ");
+        fileWriter.write(sc.nextLine());
+        sc.close();
         fileWriter.close();
 
     }
