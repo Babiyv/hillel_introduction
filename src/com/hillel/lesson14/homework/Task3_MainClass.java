@@ -10,6 +10,7 @@ import java.nio.channels.ClosedChannelException;
 д) try-finally
 * (в каждой конструкции try должны быть
 вызовы 3х методов промежуточного класса с разными ошибками).*/
+
 public class Task3_MainClass extends Exception {
         public static void main(String[] args) throws Exception {
             getFirstException();

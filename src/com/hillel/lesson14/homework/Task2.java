@@ -25,6 +25,4 @@ public class Task2 {
     protected static void thirdThrowMethod() throws IOException {
         Task1.getThirdException();
     }
-
-
 }
