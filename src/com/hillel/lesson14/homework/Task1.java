@@ -6,7 +6,7 @@ import java.nio.channels.ClosedChannelException;
 /*Создайте класс, в которому будут 3 отдельных метода, логика которых будет вызывать 3 разные “проверяемые”(checked) ошибки.
 Ошибки можете вызвать принудительно в ходе какой-то логики(не принципиально);   */
 
-public class Task1 extends Exception {
+public class Task1 {
     public static void main(String[] args) throws Exception {
         getFirstException();
         getSecondException();
