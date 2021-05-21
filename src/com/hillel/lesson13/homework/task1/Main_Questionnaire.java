@@ -1,6 +1,5 @@
 package com.hillel.lesson13.homework.task1;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
@@ -23,7 +22,6 @@ public class Main_Questionnaire {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         FileWriter fileWriter = new FileWriter(pathToFile);
-        FileReader fileReader = new FileReader(pathToFile);
 
         // Данная программа должна просить ввести пользователя свое имя:
         System.out.print("Please enter your name: ");
@@ -43,24 +41,9 @@ public class Main_Questionnaire {
         dataIsQuestionAndAnswer.put(countryQuestion, country);
 
         nameAndData.put(name, dataIsQuestionAndAnswer);
-        System.out.println(nameAndData);
-        fileWriter.write("test");
-//        readFromFileByScanner(pathToFile);
+        fileWriter.write(nameAndData.toString());
 
-        fileReader.close();
+        fileWriter.close();
         sc.close();
     }
-
-    private static void readFromFileByScanner(String pathToFile) throws IOException{
-        FileReader fileReader = new FileReader(pathToFile);
-        Scanner scanner = new Scanner(fileReader);
-        while (scanner.hasNextLine()){
-            String fileString = scanner.nextLine();
-            System.out.println("Read one string from file: ");
-            System.out.println(fileString);
-        }
-        scanner.close();
-        fileReader.close();
-    }
-
 }
