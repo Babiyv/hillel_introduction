@@ -20,7 +20,7 @@ public class ParentClass_Polymorphism_MethodOverloading {
         System.out.println("This is parent class");
     }
 
-//    перезагрузка метода
+//    перезагрузка выше метода
     public void printSomethingToConsole(String textToPrint){
         System.out.println("This is parent class.".concat(textToPrint));
     }
